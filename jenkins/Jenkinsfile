@@ -45,7 +45,7 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts "/var/lib/jenkins/source/dist/add2vals" 
+                    archiveArtifacts "${env.BUILD_ID}/source/dist/add2vals" 
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
                 }
               //  always { 
