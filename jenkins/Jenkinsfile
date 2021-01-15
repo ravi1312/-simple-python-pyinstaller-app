@@ -12,7 +12,8 @@ pipeline {
             }
             steps {
                 echo "hello"
-               // sh 'python -m py_compile sources/add2vals.py sources/calc.py'
+                sh 'docker save sources/add2vals.py | gzip HelloWorld.zip'
+                sh 'python -m py_compile sources/add2vals.py'
                 //stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
