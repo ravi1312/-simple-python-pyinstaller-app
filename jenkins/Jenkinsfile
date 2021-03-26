@@ -1,5 +1,9 @@
 pipeline {
-    agent none
+    agent {
+      docker {
+        image 'ravi1312/sample'
+      }
+    }
     options {
         skipStagesAfterUnstable()
     }
