@@ -12,6 +12,7 @@ pipeline{
           }
           catch (e){
             echo "fatal error"
+            error ('*******FATAL ERROR*********')
           }
         }
       }
