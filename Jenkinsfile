@@ -4,10 +4,15 @@ pipeline{
     stage("git checkout"){
       steps{
         script{
-          sh """
-          git clone https://github.com/ravi1312/Jenkinsjob.git
-          git checkout master
-          """
+          try {
+            sh """
+            git clone https://github.com/ravi1312/Jenkinsjob.git
+            git checkout master
+            """
+          }
+          catch (e){
+            echo "fatal error"
+          }
         }
       }
     }
